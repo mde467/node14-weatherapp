@@ -4,6 +4,8 @@ const express = require('express');
 const hbs = require('hbs');
 const forecast = require('./utils/forecast');
 const geocode = require('./utils/geocode');
+
+const port = process.env.PORT || 3000;
 const app = express()
 
 const partialPath = path.join(__dirname , "../templates/partial");
@@ -77,6 +79,6 @@ app.get('*',(req,resp)=>{
         name:'Mrudula'
     });
 })
-app.listen(3000, ()=>{
-    console.log('Server is up on port 3000');
+app.listen(port, ()=>{
+    console.log('Server is up on port ' + port);
 });
